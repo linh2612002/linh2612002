@@ -1,0 +1,134 @@
+<! DOCTYPE html >
+< html  lang = " en " >
+< đầu >
+    < meta  charset = " UTF-8 " >
+    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < link  rel = " stylesheet " href = " https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900 " >
+    < title > Tài liệu </ title >
+    < style >
+
+cơ thể {
+    nền-màu : trắng;
+}
+  
+# bộ đếm thời gian {
+  màu :  # eeeeee ;
+  text-align : center;
+  text-biến đổi : chữ hoa;
+  font-family :  'Lato' , sans-serif;
+  font-size :  .7 em ;
+  khoảng cách giữa các chữ cái :  5 px ;
+}
+
+. ngày , . giờ , . phút , . giây {
+  display : inline-block;
+  đệm :  20 px ;
+  chiều rộng :  100 px ;
+  bán kính đường viền :  5 px ;
+}
+
+. ngày {
+  nền :  # EF2F3C ;
+}
+
+. giờ {
+  nền :  # eeeeee ;
+  màu :  # 183059 ;
+}
+
+. phút {
+  nền :  # 276FBF ;
+}
+
+. giây {
+  nền :  # F0A202 ;
+}
+
+. số {
+  font-family :  'Montserrat' , sans-serif;
+  màu :   # 183059 ;
+  font-size :  4 em ;
+  text-align : center;
+}
+
+. trắng {
+  vị trí : tuyệt đối;
+  nền :   # eeeeee ;
+  chiều cao :  85 px ;
+  chiều rộng :  75 px ;
+  trái :  30 % ;
+  top :  2 % ;
+}
+
+. đỏ {
+  vị trí : tuyệt đối;
+  nền :   # EF2F3C ;
+  trái :  18 % ;
+  top :  9 % ;
+  chiều cao :  65 px ;
+  chiều rộng :  70 px ;
+ 
+}
+
+. xanh lam {
+  vị trí : tuyệt đối;
+  nền :   # 276FBF ;
+  chiều cao :  80 px ;
+  chiều rộng :  80 px ;
+  trái :  60 % ;
+  hàng đầu :  5 % ;
+
+
+}
+
+
+    </ style >
+</ head >
+< body >
+    
+< div  id = " timer " >
+
+    < div  class = " days " > 
+        < div  id = " days " class = " number " >  </ div > ngày </ div > 
+      < div  class = " hours " > 
+        < div   id = " hours " class = " number " >  </ div > giờ </ div > 
+      < div  class = " minutes " > 
+        < div   id = " minutes " class = " number " >  </ div > phút </ div > 
+      < div    class = " seconds " > 
+        < div  id = " seconds " class = " number " >  </ div > giây </ div > 
+      </ div >
+
+</ div >
+
+</ body >
+< script >
+    const  year  =  new  Ngày ( ) . getFullYear ( ) ;
+const  myDate  =  new  Date ( 'Ngày 15 tháng 10 năm 2024 00:00:00' ) ;
+bàn điều khiển . nhật ký ( myDate ) ;
+
+// đếm ngược
+let  timer  =  setInterval ( function ( )  {
+
+  // lấy ngày hôm nay
+  const  hôm nay  =  mới  Ngày ( ) . getTime ( ) ;
+
+  // nhận được sự khác biệt
+  const  diff  =  myDate  -  hôm nay ;
+
+  // môn Toán
+  để  ngày  =  Toán học . sàn ( khác  /  ( 1000  *  60  *  60  *  24 ) ) ;
+  để  giờ  =  Toán học . tầng ( ( khác  %  ( 1000  *  60  *  60  *  24 ) )  /  ( 1000  *  60  *  60 ) ) ;
+  để  phút  =  Toán học . sàn ( ( % khác biệt  ( 1000 * 60 * 60 ) ) / ( 1000 * 60 ) ) ;         
+  để  giây  =  Toán học . sàn ( ( diff  %  ( 1000  *  60 ) )  /  1000 ) ;
+
+  // trưng bày
+  tài liệu . getElementById ( "ngày" ) . innerHTML = ngày
+  tài liệu . getElementById ( "giờ" ) . innerHTML = giờ
+  tài liệu . getElementById ( "phút" ) . innerHTML = phút
+  tài liệu . getElementById ( "giây" ) . bên trongHTML = giây
+
+
+
+} ,  1 ) ;
+</ script >
+</ html >
